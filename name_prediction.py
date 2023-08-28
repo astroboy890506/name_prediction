@@ -1,15 +1,15 @@
 import streamlit as st
-import pickle
+import nltk
 
-# Load the trained model from the .pkl file
+# Load the trained NaiveBayesClassifier from the .pkl file
 def load_model(model_path):
     with open(model_path, 'rb') as file:
-        model = pickle.load(file)
+        model = nltk.NaiveBayesClassifier.load(file)
     return model
 
 def predict_gender(name, model):
-    gender = model.classify([name])[0]
-    return gender
+    features = extract_gender_features(name)  # Assuming you have the same feature extraction method
+    return model.classify(features)
 
 def main():
     st.title("Gender Prediction App")
