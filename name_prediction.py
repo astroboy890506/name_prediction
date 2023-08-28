@@ -7,9 +7,8 @@ def load_model(model_path):
         model = pickle.load(file)
     return model
 
-def predict_gender(name, model):
-    features = extract_gender_features(name)
-    gender = model.classify(features)
+def predict_gender(name_input, model):
+    gender = model.classify(name_input)
     return gender
 
 def main():
