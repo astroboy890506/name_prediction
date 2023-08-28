@@ -8,7 +8,8 @@ def load_model(model_path):
     return model
 
 def predict_gender(name, model):
-    gender = model.classify([name])[0]
+    features = extract_gender_features(name)
+    gender = model.classify(features)
     return gender
 
 def main():
