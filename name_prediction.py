@@ -16,7 +16,7 @@ def main():
     st.write("Enter a name to predict the gender:")
 
     # Load the model
-    model_path = 'path_to_your_model.pkl'  # Update with the actual path
+    model_path = 'name_prediction.pkl'  # Update with the actual path
     model = load_model(model_path)
 
     name_input = st.text_input("Name:")
